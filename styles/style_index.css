@@ -25,7 +25,7 @@ body {
 }
 
 .logo {
-    height: 25px;
+    height: 35px;
     margin-right: 25px;
 }
 
@@ -45,7 +45,7 @@ body {
 }
 
 .menu_item:hover{
-    color: #28a745;
+    color: #e8cc2f;
 }
 
 /*================= HERO SECTION =================*/
@@ -89,7 +89,7 @@ body {
     line-height: 1.2;
 
     max-width: 1000px;
-    margin-top: 0px;
+    margin: 0 auto;
 }
 
 .welcome_message {
@@ -119,8 +119,8 @@ body {
 
     background: linear-gradient(
         135deg,
-        rgb(4,108,71),
-        rgb(3,85,56)
+        rgb(195, 141, 16),
+        rgb(195, 141, 16)       
     );
 
     padding: 14px 36px;
@@ -140,7 +140,7 @@ body {
 .email-button:hover {
     transform: translateY(-2px);
 
-    box-shadow: 0 8px 20px rgba(4, 108, 71, 0.25);
+    box-shadow: 0 8px 20px rgba(2, 36, 24, 0.25);
 }
 
 /*================= SERVICES SECTION =================*/
@@ -241,7 +241,7 @@ body {
 
     margin-bottom: 16px;
 
-    color: #28a745;
+    color: #bd8e0d;
 }
 
 .footer-info p {
@@ -259,7 +259,7 @@ body {
 }
 
 .footer-contact a {
-    color: #28a745;
+    color: #bd8e0d;
     text-decoration: none;
 }
 
