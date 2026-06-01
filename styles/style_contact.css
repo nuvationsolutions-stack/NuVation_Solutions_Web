@@ -175,6 +175,7 @@ body {
     padding: 20px 24px 90px 24px;
 
     text-align: center;
+
 }
 
 .social-heading {
@@ -202,9 +203,14 @@ body {
 }
 
 .facebook-button {
-    display: inline-block;
-
-    margin-top: 34px;
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: center;
+    margin-top: 20px;
+    height: 47px;
+    width: 250px;
+    justify-self: center;
 
     border: none;
     border-radius: 10px;
@@ -245,7 +251,7 @@ body {
 
     color: #ffffff;
 
-    padding: 70px 24px 30px 24px;
+    padding: 50px 24px 30px 24px;
 
     text-align: center;
 }
