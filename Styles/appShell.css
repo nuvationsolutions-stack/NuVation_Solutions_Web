@@ -1,0 +1,706 @@
+:root {
+    --app-navy: rgb(22, 19, 46);
+    --app-accent: rgb(220, 190, 38);
+    --app-page: #f5f5f5;
+    --app-surface: #ffffff;
+    --app-text: #24222d;
+    --app-muted: #6b6b6b;
+    --app-border: #d8d6df;
+    --app-radius: 8px;
+    --app-shadow: 0 5px 20px rgba(0, 0, 0, .1);
+    --app-primary: #34305f;
+    --app-primary-hover: #211e43;
+    --app-success: #247a4d;
+    --app-success-hover: #195d39;
+    --app-danger: #b33a3a;
+    --app-danger-hover: #8f2929;
+    --app-info: #286a9b;
+    --app-info-hover: #1d527a;
+    --app-warning: #8a6410;
+    --app-warning-bg: #fff8dc;
+    --app-warning-border: #e1c45a;
+    --app-danger-bg: #fff0f0;
+    --app-danger-border: #e2a4a4;
+    --app-success-bg: #edf9f2;
+    --app-success-border: #9bcdb0;
+    --app-info-bg: #edf6fc;
+    --app-info-border: #9fc4dd;
+    --app-control-height: 42px;
+    --app-control-radius: 8px;
+}
+/* Shared plan-usage display */
+.pageUsageMeter {
+    width: min(620px, 100%);
+    margin: 14px auto 22px;
+}
+.usageCard {
+    padding: 17px;
+    border: 1px solid #dcd9e3;
+    border-left: 4px solid var(--app-success);
+    border-radius: 10px;
+    background: var(--app-surface);
+    box-shadow: 0 4px 14px rgba(22, 19, 46, .06);
+}
+.usageCard--warning {
+    border-left-color: #c49319;
+}
+.usageCard--critical {
+    border-left-color: #d56b20;
+}
+.usageCard--limit {
+    border-left-color: var(--app-danger);
+}
+.usageCard__top, .usageCard__numbers {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+}
+.usageCard__eyebrow {
+    margin: 0 0 4px;
+    color: var(--app-muted);
+    font-size: .7rem;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+.usageCard h3 {
+    margin: 0;
+    color: var(--app-navy);
+    font-size: 1rem;
+}
+.usageCard__top > strong {
+    color: var(--app-success);
+    font-size: .88rem;
+    white-space: nowrap;
+}
+.usageCard--warning .usageCard__top > strong {
+    color: #8a6410;
+}
+.usageCard--critical .usageCard__top > strong {
+    color: #a34c12;
+}
+.usageCard--limit .usageCard__top > strong {
+    color: var(--app-danger);
+}
+.usageCard__numbers {
+    margin-top: 14px;
+    color: #686371;
+    font-size: .78rem;
+}
+.usageProgress {
+    height: 7px;
+    margin-top: 7px;
+    overflow: hidden;
+    border-radius: 999px;
+    background: #eceaf0;
+}
+.usageProgress > span {
+    display: block;
+    height: 100%;
+    min-width: 2px;
+    border-radius: inherit;
+    background: var(--app-success);
+}
+.usageCard--warning .usageProgress > span {
+    background: #c49319;
+}
+.usageCard--critical .usageProgress > span {
+    background: #d56b20;
+}
+.usageCard--limit .usageProgress > span {
+    background: var(--app-danger);
+}
+.usageCard__help {
+    margin: 11px 0 0;
+    color: #716c79;
+    font-size: .77rem;
+    line-height: 1.45;
+}
+[hidden] {
+    display: none !important;
+}
+.settingsAccessPending body {
+    visibility: hidden;
+    pointer-events: none;
+}
+.permissionAccessPending body {
+    visibility: hidden;
+    pointer-events: none;
+}
+.accessPending body {
+    visibility: hidden;
+    pointer-events: none;
+}
+/* All application pages with back navigation share the Add Vehicle shell.
+Centre cards, forms and reports inside this shell—not the main element. */
+@media screen {
+    body > main:has(.backButton) {
+        width: 100% !important;
+        max-width: none !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+        padding-right: 40px !important;
+        padding-left: 40px !important;
+    }
+}
+html {
+    min-width: 320px;
+}
+body {
+    color: var(--app-text);
+    text-rendering: optimizeLegibility;
+}
+.headContainer {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    height: 68px !important;
+    min-height: 68px !important;
+    margin: 0 !important;
+    padding: 14px 40px !important;
+    box-sizing: border-box !important;
+    background: var(--app-navy) !important;
+}
+.headContainer,
+.headContainer * {
+    box-sizing: border-box;
+}
+.nuvationLogo {
+    display: block !important;
+    width: auto !important;
+    height: 40px !important;
+    max-width: none !important;
+    margin: 0 !important;
+}
+.profilesSVG {
+    display: block !important;
+    width: 30px !important;
+    height: 30px !important;
+    margin: 0 !important;
+    visibility: hidden;
+    transition: transform .2s ease, opacity .2s ease;
+}
+a:has(> .profilesSVG:not(.accountIconReady)) {
+    visibility: hidden;
+    pointer-events: none;
+}
+.profilesSVG.accountIconReady {
+    visibility: visible;
+}
+.profilesSVG:hover {
+    opacity: .82;
+    transform: scale(1.04);
+}
+.headContainer .goBack,
+.headContainer .createUser {
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color .2s ease;
+}
+.headContainer .goBack:hover,
+.headContainer .createUser:hover {
+    color: var(--app-accent);
+}
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+button,
+a,
+input,
+select,
+textarea {
+    -webkit-tap-highlight-color: transparent;
+}
+button: focus-visible, ;
+a: focus-visible, ;
+input: focus-visible, ;
+select: focus-visible, ;
+textarea:focus-visible {
+    outline: 3px solid rgba(220, 190, 38, .55);
+    outline-offset: 2px;
+}
+/* Shared application controls */
+button: not(.socialBtn), ;
+.appButton {
+    min-height: var(--app-control-height);
+    padding: 10px 18px;
+    border: 1px solid transparent;
+    border-radius: var(--app-control-radius);
+    background: var(--app-primary);
+    color: #fff;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 2px 7px rgba(22, 19, 46, .14);
+    transition: ;
+    background-color .18s ease,
+    border-color .18s ease,
+    box-shadow .18s ease,
+    transform .18s ease,
+    opacity .18s ease;
+}
+button: not(.socialBtn):hover, ;
+.appButton:hover {
+    background: var(--app-primary-hover);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 12px rgba(22, 19, 46, .18);
+}
+button: not(.socialBtn):active, ;
+.appButton:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(22, 19, 46, .14);
+}
+button: not(.socialBtn):disabled, ;
+.appButton:disabled {
+    cursor: not-allowed;
+    opacity: .55;
+    transform: none;
+    box-shadow: none;
+}
+/* Semantic button variants;
+existing class names are supported automatically. */
+.editBtn,
+.deleteBtn,
+.paymentDeleteBtn,
+.pdfBtn,
+.convertBtn {
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 34px !important;
+    margin-top: 0 !important;
+    padding: 8px 14px !important;
+    border-width: 1px !important;
+    border-style: solid !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    line-height: 16px !important;
+    white-space: nowrap;
+}
+.editBtn {
+    background: var(--app-accent) !important;
+    border-color: var(--app-accent) !important;
+    color: var(--app-navy) !important;
+}
+.editBtn:hover {
+    background: #c9a91c !important;
+    border-color: #c9a91c !important;
+    color: var(--app-navy) !important;
+}
+td .editBtn:not(:last-child),
+td .pdfBtn:not(:last-child),
+td .convertBtn:not(:last-child),
+td .deleteBtn:not(:last-child),
+td .paymentDeleteBtn:not(:last-child) {
+    margin-right: 8px !important;
+}
+.deleteBtn,
+.paymentDeleteBtn,
+#deleteAccountButton {
+    background: var(--app-danger) !important;
+    border-color: var(--app-danger) !important;
+    color: #fff !important;
+}
+.deleteBtn:hover,
+.paymentDeleteBtn:hover,
+#deleteAccountButton:hover {
+    background: var(--app-danger-hover) !important;
+    border-color: var(--app-danger-hover) !important;
+}
+.pdfBtn,
+.convertBtn,
+#generatePdfButton,
+#printButton {
+    background: var(--app-info) !important;
+    border-color: var(--app-info) !important;
+    color: #fff !important;
+}
+.pdfBtn:hover,
+.convertBtn:hover,
+#generatePdfButton:hover,
+#printButton:hover {
+    background: var(--app-info-hover) !important;
+    border-color: var(--app-info-hover) !important;
+}
+#saveChanges,
+#saveSettings,
+#saveInventory,
+#createInvoiceButton,
+#createQuoteButton,
+#addPayment,
+#adjustStock {
+    background: var(--app-success) !important;
+    border-color: var(--app-success) !important;
+    color: #fff !important;
+}
+#saveChanges:hover,
+#saveSettings:hover,
+#saveInventory:hover,
+#createInvoiceButton:hover,
+#createQuoteButton:hover,
+#addPayment:hover,
+#adjustStock:hover {
+    background: var(--app-success-hover) !important;
+    border-color: var(--app-success-hover) !important;
+}
+#cancelEdit,
+#finishInvoiceButton,
+#finishQuoteButton,
+#logoutButton,
+.backButton {
+    background: #fff !important;
+    border-color: var(--app-border) !important;
+    color: var(--app-text) !important;
+    box-shadow: 0 2px 7px rgba(22, 19, 46, .08);
+}
+/* One application-wide back control, matching Add Vehicle. Page-specific
+styles must not resize, centre, recolour, or reposition this link. */
+a.backButton {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: flex-start;
+    align-self: flex-start !important;
+    width: auto !important;
+    min-width: 0 !important;
+    min-height: 40px;
+    margin: 0 0 25px 0 !important;
+    padding: 9px 14px !important;
+    border: 1px solid var(--app-border) !important;
+    border-radius: var(--app-control-radius) !important;
+    background: var(--app-surface) !important;
+    color: var(--app-navy) !important;
+    box-shadow: 0 2px 7px rgba(22, 19, 46, .08);
+    font-size: 15px;
+    font-weight: 700 !important;
+    line-height: 20px;
+    text-align: left !important;
+    text-decoration: none !important;
+    white-space: nowrap;
+    cursor: pointer;
+}
+@media screen and (max-width: 700px) {
+    body > main:has(.backButton) {
+        padding-right: 12px !important;
+        padding-left: 12px !important;
+    }
+}
+#cancelEdit:hover,
+#finishInvoiceButton:hover,
+#finishQuoteButton:hover,
+#logoutButton:hover,
+.backButton:hover {
+    background: var(--app-accent) !important;
+    border-color: var(--app-accent) !important;
+    color: var(--app-navy) !important;
+}
+/* Shared feedback messages */
+.registrationWarning,
+.statusMessage,
+.errorStatus,
+.appAlert,
+[role="alert"] {
+    display: block;
+    width: 100%;
+    margin: 12px 0;
+    padding: 12px 14px;
+    border: 1px solid var(--app-warning-border);
+    border-left-width: 4px;
+    border-radius: var(--app-control-radius);
+    background: var(--app-warning-bg);
+    color: #604707;
+    font-size: 14px;
+    font-weight: 650;
+    line-height: 1.45;
+    box-sizing: border-box;
+}
+.errorStatus,
+.appAlert--error,
+.statusMessage.error {
+    border-color: var(--app-danger-border);
+    background: var(--app-danger-bg);
+    color: #862727;
+}
+.appAlert--success,
+.statusMessage.success {
+    border-color: var(--app-success-border);
+    background: var(--app-success-bg);
+    color: #195d39;
+}
+.appAlert--info,
+.statusMessage.info {
+    border-color: var(--app-info-border);
+    background: var(--app-info-bg);
+    color: #1d527a;
+}
+.statusMessage:empty,
+.errorStatus:empty,
+.appAlert:empty,
+[role="alert"]:empty {
+    display: none;
+}
+/* Status labels and compact badges */
+.statusBadge,
+.badge,
+[data-status] {
+    display: inline-flex;
+    align-items: center;
+    min-height: 26px;
+    padding: 4px 9px;
+    border: 1px solid var(--app-border);
+    border-radius: 999px;
+    background: #f2f1f5;
+    color: var(--app-text);
+    font-size: 12px;
+    font-weight: 750;
+    line-height: 1;
+}
+@media (max-width: 600px) {
+    button: not(.socialBtn), ;
+    .appButton {
+        min-height: 44px;
+    }
+}
+.accountLogoutAction {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 8px 12px;
+    border: 1px solid rgba(255, 255, 255, .65);
+    border-radius: 6px;
+}
+.accountLogoutAction:hover {
+    color: rgb(22, 19, 46);
+    background: white;
+}
+.professionalVerificationNotice {
+    margin: 28px 40px;
+    padding: 14px 16px;
+    border: 1px solid var(--app-warning-border);
+    border-left-width: 5px;
+    border-radius: var(--app-control-radius);
+    background: var(--app-warning-bg);
+    color: #604707;
+    font-size: 13px;
+    line-height: 1.55;
+}
+.professionalVerificationNotice strong {
+    display: block;
+    margin-bottom: 3px;
+}
+/* ================================================================
+Application-wide visual system
+Keep module layouts specialised, but make their visual language
+consistent: spacing, typography, controls, surfaces and tables.;
+================================================================ */
+@media screen {
+    body {
+        margin: 0;
+        background: var(--app-page);
+        color: var(--app-text);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    body > main {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 40px;
+    }
+    body > main h1 {
+        margin-top: 0;
+        color: var(--app-navy);
+        font-size: clamp(1.75rem, 3vw, 2.25rem);
+        line-height: 1.15;
+    }
+    body > main h2,
+    body > main h3 {
+        color: var(--app-navy);
+        line-height: 1.25;
+    }
+    body > main p {
+        line-height: 1.5;
+    }
+    body > main label {
+        color: #45424e;
+        font-weight: 700;
+    }
+    body > main input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+    body > main select,
+    body > main textarea {
+        box-sizing: border-box;
+        width: 100%;
+        min-height: var(--app-control-height);
+        padding: 10px 12px;
+        border: 1px solid var(--app-border);
+        border-radius: var(--app-control-radius);
+        background: var(--app-surface);
+        color: var(--app-text);
+        box-shadow: none;
+        transition: border-color .18s ease, box-shadow .18s ease;
+    }
+    body > main input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):focus,
+    body > main select:focus,
+    body > main textarea:focus {
+        border-color: var(--app-primary);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(52, 48, 95, .12);
+    }
+    body > main textarea {
+        min-height: 90px;
+        line-height: 1.45;
+        resize: vertical;
+    }
+    body > main input::placeholder,
+    body > main textarea::placeholder {
+        color: #85818e;
+        opacity: 1;
+    }
+    .panel,
+    .inventoryCard,
+    .supplierCard,
+    .orderCard,
+    .statCard,
+    .infoCard {
+        border: 1px solid rgba(22, 19, 46, .07);
+        border-radius: 12px;
+        background: var(--app-surface);
+        box-shadow: 0 4px 15px rgba(22, 19, 46, .09);
+    }
+    .deliveryToolbar,
+    .maintenanceControls,
+    .reportControls .filters {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 22px;
+    }
+    .deliveryToolbar input,
+    .deliveryToolbar select,
+    .maintenanceControls input,
+    .maintenanceControls select {
+        width: min(320px, 100%);
+        margin: 0;
+    }
+    .tableWrapper,
+    .maintenanceTableWrapper {
+        overflow-x: auto;
+        border: 1px solid rgba(22, 19, 46, .07);
+        border-radius: 10px;
+        background: var(--app-surface);
+        box-shadow: 0 3px 12px rgba(22, 19, 46, .08);
+    }
+    body > main table {
+        width: 100%;
+        border-collapse: collapse;
+        background: var(--app-surface);
+    }
+    body > main th {
+        padding: 14px 16px;
+        border: 0;
+        background: var(--app-navy);
+        color: #fff;
+        font-size: 14px;
+        font-weight: 750;
+        line-height: 1.25;
+        text-align: left;
+        white-space: nowrap;
+    }
+    body > main td {
+        padding: 14px 16px;
+        border: 0;
+        border-bottom: 1px solid #e7e5eb;
+        color: var(--app-text);
+        line-height: 1.4;
+        vertical-align: middle;
+    }
+    body > main tbody tr:last-child td {
+        border-bottom: 0;
+    }
+    body > main tbody tr:hover {
+        background: #faf9fc;
+    }
+    body > main dialog {
+        color: var(--app-text);
+        border: 0;
+        border-radius: 12px;
+        background: var(--app-surface);
+        box-shadow: 0 18px 55px rgba(22, 19, 46, .28);
+    }
+}
+.documentVerificationNotice {
+    margin-top: 18px;
+    padding: 10px 12px;
+    border-left: 4px solid var(--app-accent);
+    background: var(--app-warning-bg);
+    color: #604707;
+    font-size: 11px;
+    line-height: 1.45;
+}
+@media print {
+    .professionalVerificationNotice {
+        display: block !important;
+        margin: 6mm 0 0 !important;
+        padding: 3mm 4mm !important;
+        border: 1px solid #8a6410 !important;
+        border-left-width: 4px !important;
+        background: #fff !important;
+        color: #332500 !important;
+        font-size: 9pt !important;
+        line-height: 1.35 !important;
+        break-inside: avoid;
+    }
+}
+@media (max-width: 600px) {
+    .headContainer {
+        padding-right: 20px !important;
+        padding-left: 20px !important;
+    }
+    .nuvationLogo {
+        height: 34px !important;
+    }
+    .professionalVerificationNotice {
+        margin: 22px 18px;
+    }
+    body > main {
+        padding: 24px 18px;
+    }
+    .deliveryToolbar,
+    .maintenanceControls,
+    .reportControls .filters {
+        align-items: stretch;
+        flex-direction: column;
+    }
+    .deliveryToolbar input,
+    .deliveryToolbar select,
+    .maintenanceControls input,
+    .maintenanceControls select,
+    .reportControls .filters > * {
+        width: 100%;
+        max-width: none;
+    }
+}
+.identityLockNotice {
+    box-sizing: border-box;
+    margin: 0.75rem 0 1.25rem;
+    padding: 0.8rem 1rem;
+    max-width: 760px;
+    border: 1px solid rgba(124, 144, 165, 0.45);
+    border-radius: 10px;
+    background: rgba(235, 241, 247, 0.72);
+    color: #334155;
+    font-size: 0.92rem;
+    line-height: 1.45;
+}
+input[readonly],
+select:disabled {
+    cursor: not-allowed;
+    opacity: 0.78;
+}

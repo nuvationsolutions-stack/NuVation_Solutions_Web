@@ -1,188 +1,151 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NuVation Business Solutions</title>
-    <link rel="stylesheet" href="styles/style_about.css">
-</head>
-
-<body>
-
-    <!-- HEADER SECTION -->
-    <header class="header">
-        <img src="images/NuVationLogo.svg" class="logo" alt="NuVation Logo"/>
-
-        <nav class="menuBar">
-            <a href="index.html" class="menu_item">Home</a>
-            <a href="about.html" class="menu_item">About</a>
-            <a href="contact.html" class="menu_item">Contact</a>
-        </nav>
-    </header>
-
-    <!-- MAIN ABOUT CONTENT -->
-    <main class="hero-container">
-
-        <div class="home_head">
-            <h1 class="home_heading">Our Mission</h1>
-        </div>
-
-        <p class="welcome_message">
-            At NuVation Business Solutions, we believe running
-            a business shouldn't mean wearing a dozen different
-            hats. Many South African SMEs struggle to balance
-            multiple separate service providers for design,
-            marketing, and administrative tasks. This
-            fragmentation wastes valuable time,
-            dilutes brand messaging, and inflates overhead costs.
-        </p>
-
-        <p class="welcome_message">
-            We built NuVation to solve this exact problem.
-            By uniting graphic design, local marketing,
-            administrative support, and business planning
-            under a single umbrella, we provide an all-in-one
-            ecosystem that eliminates operational friction.
-            We optimize your back-office operations so you can
-            focus 100% on scaling your enterprise.
-        </p>
-
-        <button onclick="window.location.href='contact.html'" class="email-button">
-            Let's Talk Business
-        </button>
-
-        <p class="disp">
-            All featured work is the intellectual
-            property of NuVation Business Solutions
-            and its respective clients. Subject to
-            copyright laws. Unauthorized reproduction,
-            distribution, or alteration of these designs
-            is strictly prohibited.
-        </p>
-
-        <!-- PORTFOLIO GRID -->
-        <div class="portfolio-grid">
-
-            <div class="portfolio-card">
-                <img src="images/One_Dial_Logo.svg"
-                class="portfolio-svg-display"
-                alt="Graphic Design Portfolio Proof" />
-
-                <div class="portfolio-info">
-                    <h4>Corporate Identity Design</h4>
-                    <p>Custom vector logo design tailored for a security
-                        and risk management firm.
-                    </p>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self'; img-src 'self' data:; font-src 'self'; script-src 'none'; connect-src 'none'; frame-src 'none'; object-src 'none'; form-action 'none'; base-uri 'none'">
+        <meta name="referrer" content="no-referrer">
+        <meta name="description" content="Learn why NuVation built a practical modular ERP for South African small businesses.">
+        <title>About NuVation</title>
+        <link rel="stylesheet" href="/Styles/marketing.css">
+    </head>
+    <body>
+        <header class="marketingHeader">
+            <a class="brand" href="/home.html">
+                <img src="/Img/NuVation Icon.svg" alt="NuVation">
+            </a>
+            <nav class="marketingNav" aria-label="Main navigation">
+                <a href="/home.html">Product</a>
+                <a class="active" href="/about.html">About</a>
+                <a href="/services.html">Plans &amp; Services</a>
+                <a href="/contact.html">Contact</a>
+            </nav>
+            <a class="headerCta" href="/HTMLPages/comingSoon.html">Open NuVation</a>
+        </header>
+        <div class="launchNotice" role="status"><strong>Closed production preview:</strong> NuVation is preparing for customer launch. Registrations and payments are not currently available.</div>
+        <main>
+                <section class="pageHero sectionShell">
+                    <p class="eyebrow">About NuVation</p>
+                    <h1>Practical business software without the clutter.</h1>
+                    <p>NuVation Business Solutions is building one connected workspace for the daily records and operational work small businesses already manage.</p>
+                </section>
+                <section class="sectionShell splitSection aboutStory">
+                    <div>
+                        <h2>Why we built the ERP</h2>
+                        <p>Customer information, stock, invoices, supplier purchases and bookkeeping often live in separate files or disconnected tools. NuVation brings those records together while allowing a business to add only the operational modules it needs.</p>
+                        <p>The product is designed around clear workflows, modular access and records that retain their relationships—from a supplier receipt to inventory cost, or from an invoice payment to bookkeeping income.</p>
+                    </div>
+                    <div class="noticeCard">
+                        <strong>Our product principle</strong>
+                        <p>Every module must work with the base ERP independently and become more useful when compatible modules are also installed.</p>
+                    </div>
+                </section>
+                <section class="softSection">
+                    <div class="sectionShell contentSection">
+                        <div class="sectionHeading">
+                            <p class="eyebrow">Built by a small business for small businesses</p>
+                            <h2>Meet the founder</h2>
+                            <p>NuVation Business Solutions is a South African sole proprietorship operated by Jaco du Toit in Potchefstroom. After completing an NQF Level 5 qualification in Business Management and experiencing the realities of running a very small business, Jaco built NuVation around the connected record-keeping and operational tools he believed smaller businesses and sole proprietors would value.</p>
+                            <p>This background informs the product design; it is not a claim that NuVation provides professional accounting, tax, legal, audit or security services.</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="sectionShell contentSection">
+                        <div class="sectionHeading">
+                            <p class="eyebrow">Built for real teams</p>
+                            <h2>Different access for different responsibilities</h2>
+                        </div>
+                        <div class="featureGrid fourGrid">
+                            <article class="featureCard">
+                                <h3>Owner</h3>
+                                <p>Controls the business workspace, subscription, settings, team and Professional access.</p>
+                            </article>
+                            <article class="featureCard">
+                                <h3>Administrator</h3>
+                                <p>Supports business operations without receiving ownership or billing control.</p>
+                            </article>
+                            <article class="featureCard">
+                                <h3>Employee</h3>
+                                <p>Sees only the modules and actions selected for their role.</p>
+                            </article>
+                            <article class="featureCard">
+                                <h3>Professional</h3>
+                                <p>Uses a separate read-only financial workspace across invited businesses.</p>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+                <section class="sectionShell contentSection">
+                    <div class="sectionHeading">
+                        <p class="eyebrow">Clear boundaries</p>
+                        <h2>A tool for records—not a replacement for professionals</h2>
+                        <p>NuVation helps capture, organise, connect, search and print information supplied by users. It does not verify source documents or provide legal, tax, audit, assurance or professional accounting services.</p>
+                    </div>
+                    <div class="responsibilityGrid">
+                        <div>
+                            <strong>NuVation helps with</strong>
+                            <ul>
+                                <li>Everyday business administration</li>
+                                <li>Bookkeeping record organisation</li>
+                                <li>Connected operational workflows</li>
+                                <li>Role-based team access</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <strong>Customers remain responsible for</strong>
+                            <ul>
+                                <li>Accurate source information</li>
+                                <li>VAT, tax and regulatory treatment</li>
+                                <li>Lawful data collection and sharing</li>
+                                <li>Appropriate professional review</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+                <section class="secondaryServices">
+                    <div class="sectionShell splitSection">
+                        <div>
+                            <p class="eyebrow">NuVation Business Solutions</p>
+                            <h2>Software first, services when needed</h2>
+                            <p>The ERP is our primary offering. We also provide separate project-based graphic design, website development, marketing and administrative support.</p>
+                        </div>
+                        <a class="secondaryButton" href="/services.html">Explore plans &amp; services</a>
+                    </div>
+                </section>
+                <section class="ctaSection sectionShell">
+                    <div>
+                        <h2>See what the workspace includes.</h2>
+                        <p>Review the base plan and optional modules.</p>
+                    </div>
+                    <a class="primaryButton" href="/home.html#pricing">View pricing</a>
+                </section>
+            </main>
+            <footer class="marketingFooter">
+                <div>
+                    <img src="/Img/NuVation Icon.svg" alt="NuVation">
+                    <p>One modular workspace for everyday business records.</p>
                 </div>
-            </div>
-
-            <div class="portfolio-card">
-                <img src="images/DIAAN'S LOGO.svg"
-                class="portfolio-svg-display"
-                alt="Marketing Portfolio Proof" />
-
-                <div class="portfolio-info">
-                    <h4>Industrial Logo Identity</h4>
-
-                    <p>
-                        Bespoke brand identity developed for RockSolit,
-                        a dedicated company in the transport and plant hire industry.
-                    </p>
+                <div>
+                    <strong>Product</strong>
+                    <a href="/home.html">ERP overview</a>
+                    <a href="/services.html">Pricing</a>
                 </div>
-            </div>
-
-            <div class="portfolio-card">
-                <img src="images/letterhead.svg"
-                class="portfolio-svg-display"
-                alt="Business Planning Portfolio Proof" />
-
-                <div class="portfolio-info">
-                    <h4>Business Letterhead</h4>
-
-                    <p>
-                        Professional corporate stationery systems, featuring optimized
-                        margins and fully editable MicroSoft Word templates.
-                    </p>
+                <div>
+                    <strong>Contact</strong>
+                    <a href="mailto:info@nuvationbusiness.co.za">info@nuvationbusiness.co.za</a>
+                    <a href="tel:+27610513710">061 051 3710</a>
                 </div>
-            </div>
-
-            <div class="portfolio-card">
-                <img src="images/hydro_ad.svg"
-                class="portfolio-svg-display"
-                alt="Business Planning Portfolio Proof" />
-
-                <div class="portfolio-info">
-                    <h4>Plant for Hire Advertisement</h4>
-
-                    <p>
-                        Strategic promotional layouts utilizing curated, high-resolution industry
-                        visuals to maximize engagement 
-                    </p>
+                <div>
+                    <strong>Legal</strong>
+                    <a href="/HTMLPages/terms.html">Terms</a>
+                    <a href="/HTMLPages/privacy.html">Privacy</a>
+                    <a href="/HTMLPages/refundCancellation.html">Refunds &amp; cancellation</a>
+                    <a href="/HTMLPages/supplierInformation.html">Supplier information</a>
+                    <a href="/HTMLPages/dataProcessingTerms.html">Data processing</a>
+                    <a href="/HTMLPages/paiaManual.html">PAIA manual</a>
                 </div>
-            </div>
-
-            <div class="portfolio-card">
-                <img src="images/admin.svg"
-                class="portfolio-svg-display"
-                alt="Business Planning Portfolio Proof" />
-
-                <div class="portfolio-info">
-                    <h4>Administrative Support</h4>
-
-                    <p>
-                        Comprehensive administrative solutions, specializing in
-                        financial tracking, detailed reporting and structured 
-                        document organization
-                    </p>
-                </div>
-            </div>
-
-        </div>
-
-        <button onclick="window.location.href='contact.html'" class="email-button">
-            Let's Talk Business
-        </button>
- 
-    <p class="disp">
-    This website was proudly designed and developed by
-    NuVation Business Solutions using modern HTML & CSS
-    development practices and deployed through GitHub-based
-    hosting infrastructure to deliver a professional and
-    cost-effective online presence.
-    </p>
-
-    </main>
-
-   
-
-    <!-- FOOTER -->
-    <footer class="main-footer">
-
-        <div class="footer-info">
-            <h4>NuVation Business Solutions</h4>
-
-            <p>
-                Empowering South African SMEs with all-in-one
-                corporate growth services.
-            </p>
-
-            <p class="footer-contact">
-                📍 Potchefstroom, South Africa
-            </p>
-
-            <p class="footer-contact">
-                ✉️
-                <a href="mailto:info@nuvationbusiness.co.za">
-                    info@nuvationbusiness.co.za
-                </a>
-            </p>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 NuVation Business Solutions. All Rights Reserved.</p>
-        </div>
-
-    </footer>
-
-</body>
-</html>
+                <p class="footerBottom">&copy; 2026 Jaco du Toit trading as NuVation Business Solutions. South Africa.</p>
+            </footer>
+        </body>
+    </html>
