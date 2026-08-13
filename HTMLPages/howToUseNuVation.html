@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>How to Use NuVation</title>
+    <link rel="stylesheet" href="/Styles/marketing.css">
+    <link rel="stylesheet" href="/Styles/howToUseNuVation.css">
+</head>
+
+<body>
+    <header class="marketingHeader">
+        <a class="brand" href="/home.html" aria-label="NuVation home">
+            <img src="/Img/NuVation Icon.svg" alt="NuVation">
+        </a>
+        <nav class="marketingNav" aria-label="Main navigation">
+            <a href="/home.html">Product</a>
+            <a href="/about.html">About</a>
+            <a href="/services.html">Plans &amp; Services</a>
+            <a class="active" href="/HTMLPages/howToUseNuVation.html">User Guide</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+        <a class="headerCta" href="/HTMLPages/comingSoon.html">Open NuVation</a>
+    </header>
+
+    <div class="launchNotice" role="status">
+        <strong>Closed production preview:</strong>
+        NuVation is preparing for customer launch. Registrations and payments are not currently available.
+    </div>
+
+    <main class="helpCentre">
+        <section class="helpHero" aria-labelledby="helpTitle">
+            <p class="eyebrow">NuVation user guide</p>
+            <h1 id="helpTitle">How can we help?</h1>
+            <p>
+                Choose a task or role to see clear instructions and visual examples.
+                NuVation may hide actions that are not included in your plan or role.
+            </p>
+        </section>
+
+        <section class="helpControls" aria-label="Find help">
+            <label for="helpSearch">
+                Search the guide
+                <input
+                    id="helpSearch"
+                    type="search"
+                    placeholder="Example: create a customer"
+                    autocomplete="off">
+            </label>
+
+            <label for="helpRole">
+                Show guidance for
+                <select id="helpRole">
+                    <option value="all">Everyone</option>
+                    <option value="owner">Business owners</option>
+                    <option value="administrator">Administrators</option>
+                    <option value="employee">Employees</option>
+                    <option value="professional">Professionals</option>
+                </select>
+            </label>
+        </section>
+
+        <nav id="helpTopics" class="helpTopics" aria-label="Help topics"></nav>
+
+        <p id="helpResultCount" class="helpResultCount" aria-live="polite"></p>
+
+        <div id="helpSections" class="helpSections"></div>
+
+        <section class="helpSupport">
+            <h2>Still need help?</h2>
+            <p>
+                Contact NuVation with the page name, what you were trying to do and
+                the exact friendly message shown on screen. Never send your password,
+                one-time code, complete card details or authentication token.
+            </p>
+            <a href="/contact.html">Contact NuVation</a>
+        </section>
+    </main>
+
+    <script type="module" src="/Logic/Pages/howToUseNuVation.js"></script>
+</body>
+
+</html>
