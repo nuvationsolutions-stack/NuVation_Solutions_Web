@@ -1049,6 +1049,7 @@ h3 {
     }
     .appPreview {
         max-width: 680px;
+        transform: none;
     }
     .sixGrid, .pricingGrid {
         grid-template-columns: repeat(2, 1fr);
