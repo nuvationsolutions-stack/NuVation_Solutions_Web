@@ -83,7 +83,10 @@ button, input, select, textarea {
     color: var(--gold);
 }
 .launchNotice {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
     padding: 9px 24px;
     border-bottom: 1px solid #e2e0e8;
     background: #ffffff;
@@ -92,14 +95,11 @@ button, input, select, textarea {
     text-align: center;
 }
 .launchNotice::before {
-    display: inline-block;
     width: 7px;
     height: 7px;
-    margin-right: 9px;
     border-radius: 50%;
     background: var(--gold-dark);
     content: '';
-    vertical-align: middle;
 }
 .launchNotice strong {
     color: var(--navy);
@@ -240,26 +240,22 @@ h3 {
 .previewStats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    padding: 14px 18px 10px;
+    gap: 10px;
+    padding: 18px;
 }
 .previewStats article {
     display: grid;
-    gap: 2px;
-    min-width: 0;
-    padding: 9px 10px;
+    gap: 4px;
+    padding: 16px;
     border: 1px solid var(--border);
     border-radius: 10px;
     background: #f8f8fa;
 }
 .previewStats small {
     color: var(--muted);
-    font-size: .68rem;
 }
 .previewStats strong {
     color: var(--navy);
-    font-size: .8rem;
-    line-height: 1.2;
 }
 .previewModules {
     display: grid;
@@ -1121,6 +1117,9 @@ h3 {
         padding-left: 0;
         border-left: 0;
     }
+    .previewStats {
+        grid-template-columns: 1fr;
+    }
     .previewModules {
         grid-template-columns: 1fr;
     }
@@ -1193,12 +1192,14 @@ h3 {
         text-align: center;
     }
     .launchNotice {
+        align-items: flex-start;
         padding: 10px 14px;
         font-size: .78rem;
         line-height: 1.4;
     }
     .launchNotice::before {
-        margin-top: 0;
+        flex: 0 0 7px;
+        margin-top: .35em;
     }
     .sectionShell {
         width: calc(100% - 24px);
@@ -1228,20 +1229,6 @@ h3 {
     }
     .appPreview {
         padding: 15px;
-    }
-    .previewStats {
-        gap: 5px;
-        padding: 12px 0 8px;
-    }
-    .previewStats article {
-        padding: 7px 6px;
-        text-align: center;
-    }
-    .previewStats small {
-        font-size: .6rem;
-    }
-    .previewStats strong {
-        font-size: .7rem;
     }
     .previewTop {
         grid-template-columns: 18px minmax(0, 1fr) 18px;
