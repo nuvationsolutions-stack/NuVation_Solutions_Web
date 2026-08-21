@@ -82,6 +82,9 @@ button, input, select, textarea {
     background: rgba(255, 255, 255, .1);
     color: var(--gold);
 }
+.accountNavLink {
+    display: none;
+}
 .launchNotice {
     display: flex;
     align-items: center;
@@ -1042,6 +1045,9 @@ h3 {
     .marketingNav {
         justify-content: flex-end;
     }
+    .marketingNav .accountNavLink {
+        display: inline-flex;
+    }
     .hero {
         grid-template-columns: 1fr;
         gap: 42px;
@@ -1196,6 +1202,11 @@ h3 {
         grid-column: 1 / -1;
         width: calc(50% - 2px);
         justify-self: center;
+    }
+    .marketingNav a.accountNavLink {
+        grid-column: auto;
+        width: auto;
+        justify-self: stretch;
     }
     .launchNotice {
         align-items: flex-start;
