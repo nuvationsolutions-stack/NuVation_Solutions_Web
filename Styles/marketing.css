@@ -1094,14 +1094,25 @@ h3 {
         padding: 13px 16px;
     }
     .marketingNav {
-        width: 100%;
-        justify-content: center;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        width: min(100%, 430px);
+        justify-content: stretch;
         gap: 4px;
     }
     .marketingNav a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
         padding: 8px 9px;
         font-size: .8rem;
+        text-align: center;
+    }
+    .marketingNav a.accountNavLink:last-child {
+        grid-column: 1 / -1;
+        width: calc(50% - 2px);
+        justify-self: center;
     }
     .sectionShell {
         width: min(100% - 28px, 1180px);
