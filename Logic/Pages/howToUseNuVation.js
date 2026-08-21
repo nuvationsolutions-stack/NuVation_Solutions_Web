@@ -41,7 +41,10 @@ const guides = [
             "Open View Customers to confirm the new record."
         ],
         note: "Your business is responsible for its own privacy notices, lawful purpose, accuracy and retention rules for customer information.",
-        images: [{ heading: "Choose a customer action", src: "/Assets/Help/customers-actions.png", alt: "Customer area with create, edit and view options", caption: "Create a new record or choose the separate view and edit areas for existing customers." }]
+        images: [
+            { heading: "Choose a customer action", src: "/Assets/Help/customers-actions.png", alt: "Customer area with create, edit and view options", caption: "Create a new record or choose the separate view and edit areas for existing customers." },
+            { heading: "Enter the customer details", src: "/Assets/Help/customer-form.png", alt: "Customer information fields and registration switches", caption: "Capture only accurate contact and registration details that the business lawfully needs." }
+        ]
     },
     {
         topic: "Customers",
@@ -70,7 +73,10 @@ const guides = [
             "Select Save Inventory Item once and confirm the item appears in the inventory list."
         ],
         note: "Negative prices and quantities are rejected. Stock movements created by invoices or supplier receipts are calculated by the server.",
-        images: [{ heading: "Inventory workspace", src: "/Assets/Help/inventory-actions.png", alt: "Inventory workspace with add and management options", caption: "Add a new item or open the relevant management area for existing stock." }]
+        images: [
+            { heading: "Inventory workspace", src: "/Assets/Help/inventory-actions.png", alt: "Inventory workspace with add and management options", caption: "Add a new item or open the relevant management area for existing stock." },
+            { heading: "Enter the stock details", src: "/Assets/Help/inventory-form.png", alt: "Inventory item type, price, quantity and product reference fields", caption: "Check the selling price, recorded quantity and low-stock warning before saving." }
+        ]
     },
     {
         topic: "Inventory",
@@ -112,7 +118,8 @@ const guides = [
             "Use Print or Save PDF to create the customer-facing document without printing the surrounding ERP interface.",
             "Delete a payment or invoice only after reviewing the warning and its bookkeeping or stock consequences."
         ],
-        note: "The server prevents duplicate requests, overpayment races and conflicting payment/deletion operations."
+        note: "The server prevents duplicate requests, overpayment races and conflicting payment/deletion operations.",
+        images: [{ heading: "Find the correct invoice", src: "/Assets/Help/invoice-list-current.png", alt: "Current invoice list showing search and complete table headings", caption: "Search for the exact invoice and confirm its row before selecting an action." }]
     },
     {
         topic: "Invoices and quotes",
@@ -266,8 +273,7 @@ const guides = [
         ],
         note: "Owners may assign themselves and complete their own job cards. Users cannot start or complete another person's unassigned job.",
         images: [
-            { heading: "Enter the job details", src: "/Assets/Help/job-details.png", alt: "Job title, invoice, planned start and due-date controls", caption: "Enter the job identity and schedule before assigning it." },
-            { heading: "Assign the responsible person", src: "/Assets/Help/job-assignment.png", alt: "Job employee assignment control with the owner selected as an available option", caption: "Choose the employee responsible for the work, or select yourself as the owner." }
+            { heading: "Enter the job details", src: "/Assets/Help/job-details.png", alt: "Job title, invoice, planned start and due-date controls", caption: "Enter the job identity and schedule before assigning it." }
         ]
     },
     {
@@ -292,11 +298,11 @@ const guides = [
             "Open Plan, add-ons & limits from My Account or Business Settings.",
             "When no base plan is active, choose a 1, 3, 6 or 12-month base period.",
             "Select one work package if needed and add only the optional modules the business will use.",
-            "Review included base allowances, optional limits, exact access dates and the complete prepaid total.",
+            "Review included base allowances, optional limits, exact access dates and the complete prepaid total. The current standard prices are R450 per base-plan month, R100 per ordinary optional-module month, R100 per Jobs & Job Cards month, R150 per Project Manager, Jobs & Job Cards month and R75 per additional employee-seat month.",
             "Confirm the purchase-specific legal statements only after every product, price and expiry is correct."
         ],
-        note: "Products terminate automatically on their displayed expiry dates. NuVation does not renew or charge them automatically.",
-        images: [{ heading: "Review the complete selection", src: "/Assets/Help/subscription-base.png", alt: "Subscription builder base plan and included allowances", caption: "Review the included base plan before selecting a period or any additions." }]
+        note: "Products terminate automatically on their displayed expiry dates. NuVation does not renew or charge them automatically. The exact server-authored checkout quote is authoritative; never rely on an old screenshot or cached page when approving a purchase.",
+        images: [{ heading: "Review the current base plan", src: "/Assets/Help/subscription-base-current.png", alt: "Current NuVation base-plan card showing R450 per prepaid month and included allowances", caption: "The current base ERP is R450 per prepaid month and includes the six displayed record areas." }]
     },
     {
         topic: "Plans and limits",
@@ -313,6 +319,20 @@ const guides = [
         note: "An addition can never extend beyond the base plan. The base plan itself cannot be stacked or extended while active."
     },
     {
+        topic: "Plans and limits",
+        title: "Complete payment and confirm current access",
+        summary: "Use PayFast securely and confirm activation from the authoritative account view.",
+        roles: ["owner"],
+        steps: [
+            "Review the server-authored order, products, periods and total before selecting Continue securely with PayFast.",
+            "Complete payment only on PayFast's secure page. NuVation never asks you to enter card or wallet credentials into the ERP.",
+            "After returning, do not treat the browser message or PayFast screenshot as proof that access changed.",
+            "Open My Account, then Plan, add-ons & limits, and read Current access.",
+            "Confirm that the exact base plan, module, seat or allowance and expiry date appear. Contact NuVation with the order reference if PayFast reports payment but access does not appear."
+        ],
+        note: "Access changes only after NuVation independently verifies PayFast's notification, exact order, merchant, amount and single-use provider payment reference. Never email card details, passwords or authentication codes."
+    },
+    {
         topic: "Settings and security",
         title: "Update business settings and branding",
         summary: "Maintain business, address, banking, document and logo information.",
@@ -325,7 +345,6 @@ const guides = [
             "Generate a test invoice or quote PDF and confirm the details before sending documents to customers."
         ],
         note: "Do not upload secrets or identity documents as a logo. NuVation validates the file type, signature and size on the server.",
-        images: [{ heading: "Business settings", src: "/Assets/Help/settings-business.png", alt: "NuVation business details settings", caption: "Open one section at a time and save only after checking the entered details." }]
     },
     {
         topic: "Settings and security",
@@ -340,6 +359,50 @@ const guides = [
             "Review memberships regularly and revoke access promptly when work or responsibility ends."
         ],
         note: "Never share one login between people. Separate identities make job, document and security investigations understandable."
+    },
+    {
+        topic: "Settings and security",
+        title: "Enable or use an authenticator",
+        summary: "Add optional multi-factor protection and complete the extra sign-in step.",
+        roles: ["owner", "administrator", "employee", "professional"],
+        steps: [
+            "Open My Account and find the account-security or authenticator section.",
+            "Start enrolment only on a device you control and add the displayed account to your trusted authenticator application.",
+            "Enter the current six-digit code to finish enrolment; a screenshot of the setup screen is not confirmation.",
+            "On future sign-ins, complete the password step and then enter the newest authenticator code.",
+            "If you lose the authenticator device, contact NuVation through the verified support process. Do not create a shared account or send recovery information through an unverified channel."
+        ],
+        note: "Once MFA is enabled, protected application operations require the stronger authenticated session. Never send NuVation your authenticator seed or one-time code.",
+        images: [{ heading: "Authenticator security", src: "/Assets/Help/mfa-account-current.png", alt: "My Account authenticator security card with the enable authenticator action", caption: "Start optional authenticator enrolment from your own My Account security card." }]
+    },
+    {
+        topic: "Settings and security",
+        title: "Reset a forgotten password",
+        summary: "Use the newest recovery email and replace the password securely.",
+        roles: ["owner", "administrator", "employee", "professional"],
+        steps: [
+            "Select Forgot your password? on the sign-in page and enter the exact account email.",
+            "Open only the newest NuVation recovery email; earlier links or codes may already be invalid.",
+            "Enter the verification code on the NuVation recovery page when prompted.",
+            "Choose a new unique password that meets the displayed requirements and submit it once.",
+            "Return to sign in and use the new password. Contact NuVation if you did not request the reset or see unfamiliar activity."
+        ],
+        note: "NuVation support must never ask for your password, authenticator seed or complete one-time code."
+    },
+    {
+        topic: "Settings and security",
+        title: "Request, upload or download business data",
+        summary: "Use the protected My Account transfer workflow for imports and exports.",
+        roles: ["owner"],
+        steps: [
+            "Open My Account and choose the relevant import or export request area.",
+            "For an export, choose only the record sections required and submit the request; standard business-data exports are free unless a separately quoted specialist format is requested.",
+            "For an import, first contact NuVation. Imports and migration work are paid services unless NuVation confirms otherwise in writing.",
+            "Use the protected upload or download action in My Account rather than ordinary email attachments when the secure transfer is available.",
+            "Download an available export promptly. Secure deliveries expire and are single-use, so preserve the downloaded copy according to your business's own retention and security procedure."
+        ],
+        note: "Email NuVation to make the team aware of the request. Any applicable scope, price and payment requirement will be communicated separately before paid work begins.",
+        images: [{ heading: "Request the exact export", src: "/Assets/Help/export-request-current.png", alt: "Secure file exchange export form with selectable business record sections", caption: "Choose only the requested record sections, explain the purpose and confirm the email enquiry before submitting." }]
     },
     {
         topic: "Settings and security",
@@ -401,16 +464,14 @@ const guideVisuals = {
     "Create an invoice": [
         { heading: "Choose an invoicing action", src: "/Assets/Help/invoicing-actions.png", alt: "Invoicing workspace actions", caption: "Start a new invoice or open the relevant management area for existing documents." }
     ],
-    "Edit, pay, print or delete an invoice": [
-        { heading: "Find the correct invoice", src: "/Assets/Help/invoice-list.png", alt: "Invoice list and actions", caption: "Search for the exact invoice before editing, recording payment, printing or deleting." }
-    ],
     "Create, edit and convert a quote": [
         { heading: "Enter the quote information", src: "/Assets/Help/quote-information.png", alt: "Quote number, date and expiry fields", caption: "Confirm the quote number and dates first." },
         { heading: "Add quote items", src: "/Assets/Help/quote-items.png", alt: "Quote item search, quantity and price controls", caption: "Select the item, quantity and entered selling price." },
         { heading: "Check the quote total", src: "/Assets/Help/quote-totals.png", alt: "Quote VAT method and totals", caption: "Verify the VAT method and the exact amount the customer will pay." }
     ],
     "Record income or an expense": [
-        { heading: "Bookkeeping workspace", src: "/Assets/Help/bookkeeping-actions.png", alt: "Bookkeeping action cards", caption: "Choose the relevant bookkeeping action for the task, then follow the labelled transaction fields and check the entry before saving." }
+        { heading: "Bookkeeping workspace", src: "/Assets/Help/bookkeeping-actions.png", alt: "Bookkeeping action cards", caption: "Choose the relevant bookkeeping action for the task." },
+        { heading: "Capture the transaction", src: "/Assets/Help/transaction-fields.png", alt: "Bookkeeping date, category, amount, payment method and reference fields", caption: "Check the date, category, amount, method and supporting reference before saving." }
     ],
     "Review receivables and statements": [
         { heading: "Review outstanding balances", src: "/Assets/Help/receivables-summary.png", alt: "Receivables summary", caption: "Check the totals before opening an invoice or recording any payment." }
@@ -433,9 +494,7 @@ const guideVisuals = {
     "Create a project and connected job": [
         { heading: "Project workspace", src: "/Assets/Help/projects-overview.png", alt: "Project Manager options", caption: "Start with the project, then connect the related jobs." }
     ],
-    "Invite people and assign permissions": [
-        { heading: "Team and access", src: "/Assets/Help/team-summary.png", alt: "Team access summary", caption: "Review the team summary before inviting people or changing access." }
-    ]
+    "Invite people and assign permissions": []
 };
 
 const topicContainer = document.querySelector("#helpTopics");
@@ -445,6 +504,7 @@ const roleSelect = document.querySelector("#helpRole");
 const resultCount = document.querySelector("#helpResultCount");
 
 let selectedTopic = "All topics";
+const topicButtons = new Map();
 
 function element(tagName, className, text) {
     const node = document.createElement(tagName);
@@ -466,20 +526,33 @@ function roleLabel(role) {
     }[role] || role;
 }
 
+function updateTopicButtons() {
+    topicButtons.forEach((button, topic) => {
+        button.setAttribute("aria-pressed", String(topic === selectedTopic));
+    });
+}
+
 function buildTopics() {
     const topics = ["All topics", ...new Set(guides.map((guide) => guide.topic))];
+    topicContainer.replaceChildren();
+    topicButtons.clear();
 
     topics.forEach((topic) => {
         const button = element("button", "helpTopicButton", topic);
         button.type = "button";
-        button.setAttribute("aria-current", String(topic === selectedTopic));
+        button.setAttribute("aria-pressed", "false");
         button.addEventListener("click", () => {
-            selectedTopic = topic;
-            buildTopics();
+            selectedTopic = topic === selectedTopic && topic !== "All topics"
+                ? "All topics"
+                : topic;
+            updateTopicButtons();
             renderGuides();
         });
+        topicButtons.set(topic, button);
         topicContainer.appendChild(button);
     });
+
+    updateTopicButtons();
 }
 
 function searchableText(guide) {
@@ -557,6 +630,8 @@ function createGuide(guide) {
         });
 
         body.appendChild(gallery);
+    } else {
+        body.classList.add("helpGuideBody--textOnly");
     }
 
     details.appendChild(body);
