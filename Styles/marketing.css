@@ -83,13 +83,13 @@ button, input, select, textarea {
     color: var(--gold);
 }
 .accountNavLink {
-    display: none;
+    display: inline-flex;
 }
 .launchNotice {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 9px;
+    gap: 0;
     padding: 9px 24px;
     border-bottom: 1px solid #e2e0e8;
     background: #ffffff;
@@ -97,13 +97,7 @@ button, input, select, textarea {
     font-size: .84rem;
     text-align: center;
 }
-.launchNotice::before {
-    width: 7px;
-    height: 7px;
-    border-radius: 50%;
-    background: var(--gold-dark);
-    content: '';
-}
+.launchNotice::before { display: none; }
 .launchNotice strong {
     color: var(--navy);
 }
