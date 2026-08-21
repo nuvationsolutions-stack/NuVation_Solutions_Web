@@ -1198,12 +1198,13 @@ h3 {
         padding: 7px 5px;
         text-align: center;
     }
-    .marketingNav a:last-child {
+    /* Two actions per row, then centre Sign up under them. */
+    .marketingNav a.accountNavLink:last-child {
         grid-column: 1 / -1;
         width: calc(50% - 2px);
         justify-self: center;
     }
-    .marketingNav a.accountNavLink {
+    .marketingNav a.accountNavLink:not(:last-child) {
         grid-column: auto;
         width: auto;
         justify-self: stretch;
