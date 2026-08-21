@@ -1221,14 +1221,14 @@ h3 {
         justify-self: stretch;
     }
     .launchNotice {
-        align-items: flex-start;
+        align-items: center;
         padding: 10px 14px;
         font-size: .78rem;
         line-height: 1.4;
     }
     .launchNotice::before {
         flex: 0 0 7px;
-        margin-top: .35em;
+        margin-top: 0;
     }
     .sectionShell {
         width: calc(100% - 24px);
