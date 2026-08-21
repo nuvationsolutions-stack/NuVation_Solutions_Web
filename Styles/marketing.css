@@ -1114,6 +1114,11 @@ h3 {
         width: calc(50% - 2px);
         justify-self: center;
     }
+    .marketingNav a.accountNavLink {
+        grid-column: 1 / -1 !important;
+        width: calc(50% - 2px) !important;
+        justify-self: center !important;
+    }
     .sectionShell {
         width: min(100% - 28px, 1180px);
     }
