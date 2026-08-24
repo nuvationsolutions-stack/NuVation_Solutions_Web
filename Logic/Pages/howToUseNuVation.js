@@ -233,6 +233,34 @@ const guides = [
         note: "Fleet resources are reusable and do not deplete like inventory. NuVation does not certify roadworthiness, safety or availability."
     },
     {
+        topic: "Calendar and deliveries",
+        title: "Work with assigned deliveries",
+        summary: "Give drivers a focused delivery workspace while authorised staff retain operational visibility.",
+        roles: ["owner", "administrator", "employee", "driver"],
+        steps: [
+            "The owner assigns a delivery driver and, where relevant, a recorded vehicle when scheduling the delivery.",
+            "A driver opens My Deliveries to see only deliveries assigned to that exact driver account.",
+            "The recipient signs on a mobile touch screen before the driver completes the delivery.",
+            "Owners, administrators and employees with Deliveries view access can open My Deliveries to see the account schedule; use Manage Deliveries for authorised changes.",
+            "Review the delivery date, recipient information, vehicle and proof before relying on the completed record."
+        ],
+        note: "Driver access is intentionally narrower than employee access. It does not grant access to customers, invoices, stock, accounting or other business records."
+    },
+    {
+        topic: "Fleet and assets",
+        title: "Use daily K53 checks and close a vehicle shift",
+        summary: "Record a pre-use vehicle check, opening odometer and accurate end-of-shift reading.",
+        roles: ["owner", "driver"],
+        steps: [
+            "A driver with a relevant assigned vehicle can record one daily K53-style check with the opening odometer.",
+            "Unticked safety items require a clear failure note so the business can understand the condition reported.",
+            "At shift end, record the closing odometer once; NuVation calculates the resulting distance from the stored readings.",
+            "If a verified closing reading needs correction, the business owner uses the owner-only correction action and records the reason.",
+            "Review the retained correction history instead of treating a corrected reading as if the original never existed."
+        ],
+        note: "These operational records support the business's own vehicle process. They are not a roadworthiness certificate or safety approval."
+    },
+    {
         topic: "Fleet and assets",
         title: "Record maintenance and business assets",
         summary: "Track maintenance history and draft asset-register information.",
@@ -275,6 +303,20 @@ const guides = [
         images: [
             { heading: "Enter the job details", src: "/Assets/Help/job-details.png", alt: "Job title, invoice, planned start and due-date controls", caption: "Enter the job identity and schedule before assigning it." }
         ]
+    },
+    {
+        topic: "Projects and jobs",
+        title: "Pause and resume work without overstating time",
+        summary: "Keep a paused job open while showing the real active work time separately.",
+        roles: ["owner", "employee"],
+        steps: [
+            "Start only the Job assigned to your own membership from My Jobs.",
+            "Pause the Job when work is interrupted or the linked resource must be released.",
+            "My Jobs shows active work time separately from the current paused duration.",
+            "Resume the same assigned Job when work continues, then finish and submit the Job Card when the work record is complete.",
+            "Review project progress from its connected Jobs rather than estimating from a separate timesheet."
+        ],
+        note: "Paused time does not add to active work time. The timer is maintained by the server and cannot be changed by a browser clock."
     },
     {
         topic: "Analytics",
