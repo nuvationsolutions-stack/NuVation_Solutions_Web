@@ -353,6 +353,14 @@ h3 {
 .darkSection .eyebrow {
     color: var(--gold);
 }
+.darkSection .sectionHeading h2,
+.darkSection .workflowLayout > div > h3 {
+    color: #fff;
+}
+.darkSection .sectionHeading > p:last-child,
+.darkSection .workflowLayout > div > p:last-child {
+    color: #d7d4df;
+}
 .workflowList {
     display: grid;
     gap: 13px;
