@@ -1150,6 +1150,12 @@ h3 {
     .sixGrid, .fourGrid, .pricingGrid, .responsibilityGrid {
         grid-template-columns: 1fr;
     }
+
+    /* Every plan, including Delivery Driver seats, remains visible on phones. */
+    .pricingGrid > .priceCard {
+        display: block !important;
+        visibility: visible !important;
+    }
     .workflowLayout {
         padding-top: 65px;
         padding-bottom: 65px;
