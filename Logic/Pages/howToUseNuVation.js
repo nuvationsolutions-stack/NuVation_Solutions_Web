@@ -109,16 +109,19 @@ const guides = [
     {
         topic: "Invoices and quotes",
         title: "Edit, pay, print or delete an invoice",
-        summary: "Manage an existing invoice and its payment history safely.",
+        summary: "Manage an existing invoice and its payment history safely, with a traceable reference to the business's own bank proof when available.",
         roles: ["owner", "administrator", "employee"],
         steps: [
             "Open View Invoices and select the correct invoice number.",
             "Use Edit to correct allowed invoice details; totals and payment status are recalculated by the server.",
-            "Record a payment with its actual amount and payment date.",
+            "Before recording payment, confirm it in the business's banking app, bank statement or other authorised payment record. A customer message or screenshot alone is not confirmation.",
+            "Record the actual amount and, when visible, the bank transaction or source reference. Do not guess a reference number.",
+            "If the business saved the bank proof in its own secure storage, paste its HTTPS link in Secure bank-proof link. NuVation keeps only the link; it does not store or verify the proof.",
+            "If no bank proof or reference is available, leave the optional fields blank and follow up or reconcile it later.",
             "Use Print or Save PDF to create the customer-facing document without printing the surrounding ERP interface.",
             "Delete a payment or invoice only after reviewing the warning and its bookkeeping or stock consequences."
         ],
-        note: "The server prevents duplicate requests, overpayment races and conflicting payment/deletion operations.",
+        note: "Keep original slips, bank proofs and independent backups safely within your own business records. The server prevents duplicate requests, overpayment races and conflicting payment/deletion operations.",
         images: [{ heading: "Find the correct invoice", src: "/Assets/Help/invoice-list-current.png", alt: "Current invoice list showing search and complete table headings", caption: "Search for the exact invoice and confirm its row before selecting an action." }]
     },
     {
