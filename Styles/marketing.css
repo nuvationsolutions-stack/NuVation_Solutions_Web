@@ -1355,6 +1355,7 @@ h3 {
 /* Navigation: keep every destination available without turning the header into a wall of buttons. */
 .marketingNav a { white-space: nowrap; }
 
+
 /* The public homepage is an overview. The complete detail is available from its dedicated navigation pages. */
 .homeSupportingDetail { display: none; }
 
@@ -1390,4 +1391,34 @@ h3 {
     .marketingNav > a.accountNavLink { order: -1; }
     .marketingNav > a.accountNavLink:first-of-type { margin-left: 0; }
     .marketingNav > a.accountNavLink:last-child { grid-column: auto; justify-self: auto; }
+}
+
+/* Fixed mobile navigation: no horizontal sliding or uneven orphan buttons. */
+@media (max-width: 1100px) {
+    .marketingHeader { grid-template-columns: 1fr; justify-items: center; }
+    .marketingNav {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        width: min(100%, 520px);
+        max-width: 520px;
+        gap: 5px;
+        overflow: visible;
+        padding: 0;
+    }
+    .marketingNav > a,
+    .marketingNav > a[href$="/signIn.html"],
+    .marketingNav > a[href$="/signUp.html"] {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100% !important;
+        min-height: 42px;
+        margin: 0;
+        padding: 7px 5px;
+        font-size: .76rem;
+        line-height: 1.15;
+        text-align: center;
+        white-space: normal;
+    }
+    .marketingNav > a.accountNavLink { order: 0; }
 }
