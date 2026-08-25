@@ -118,6 +118,7 @@ const guides = [
             "Record the actual amount and, when visible, the bank transaction or source reference. Do not guess a reference number.",
             "If the business saved the bank proof in its own secure storage, paste its HTTPS link in Secure bank-proof link. NuVation keeps only the link; it does not store or verify the proof.",
             "If no bank proof or reference is available, leave the optional fields blank and follow up or reconcile it later.",
+            "Open Receipt beside the payment in the invoice payment history to view, print or save the business’s payment receipt. The receipt carries the same source reference and proof-link status.",
             "Use Print or Save PDF to create the customer-facing document without printing the surrounding ERP interface.",
             "Delete a payment or invoice only after reviewing the warning and its bookkeeping or stock consequences."
         ],
