@@ -1351,3 +1351,40 @@ h3 {
     .marketingNav > a[href$="/signIn.html"],
     .marketingNav > a[href$="/signUp.html"] { grid-column: auto !important; width: 100% !important; justify-self: stretch !important; }
 }
+
+/* Navigation: keep every destination available without turning the header into a wall of buttons. */
+.marketingNav a { white-space: nowrap; }
+
+@media (max-width: 1100px) {
+    .marketingHeader {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 10px;
+        padding: 13px 16px 10px;
+    }
+    .headerCta { display: none; }
+    .marketingNav {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        max-width: 760px;
+        gap: 7px;
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        padding: 2px 2px 7px;
+        scrollbar-width: thin;
+    }
+    .marketingNav > a,
+    .marketingNav > a[href$="/signIn.html"],
+    .marketingNav > a[href$="/signUp.html"] {
+        flex: 0 0 auto;
+        width: auto !important;
+        min-height: 38px;
+        margin: 0;
+        padding: 8px 12px;
+    }
+    .marketingNav > a.accountNavLink { order: -1; }
+    .marketingNav > a.accountNavLink:first-of-type { margin-left: 0; }
+    .marketingNav > a.accountNavLink:last-child { grid-column: auto; justify-self: auto; }
+}
