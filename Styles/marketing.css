@@ -1355,6 +1355,9 @@ h3 {
 /* Navigation: keep every destination available without turning the header into a wall of buttons. */
 .marketingNav a { white-space: nowrap; }
 
+/* The public homepage is an overview. The complete detail is available from its dedicated navigation pages. */
+.homeSupportingDetail { display: none; }
+
 @media (max-width: 1100px) {
     .marketingHeader {
         grid-template-columns: 1fr;
@@ -1387,41 +1390,4 @@ h3 {
     .marketingNav > a.accountNavLink { order: -1; }
     .marketingNav > a.accountNavLink:first-of-type { margin-left: 0; }
     .marketingNav > a.accountNavLink:last-child { grid-column: auto; justify-self: auto; }
-}
-
-/* The homepage is a decision path; detailed product material remains available on demand. */
-.homeDetails {
-    display: block;
-    margin-top: 52px;
-    margin-bottom: 28px;
-    border: 1px solid var(--line, #d9e0e5);
-    border-radius: 18px;
-    background: #fff;
-    overflow: hidden;
-}
-.homeDetails summary {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-    padding: 20px 24px;
-    color: #173846;
-    cursor: pointer;
-    font-weight: 750;
-    list-style: none;
-}
-.homeDetails summary::-webkit-details-marker { display: none; }
-.homeDetails summary span { color: var(--accent, #057a76); font-size: .84rem; letter-spacing: .04em; text-transform: uppercase; }
-.homeDetails summary b { font-size: 1.4rem; line-height: 1; transition: transform .2s ease; }
-.homeDetails[open] summary { border-bottom: 1px solid var(--line, #d9e0e5); }
-.homeDetails[open] summary b { transform: rotate(45deg); }
-.homeDetailsContent > .sectionShell { width: min(100% - 48px, 1180px); }
-.homeDetailsContent > .darkSection { margin-right: -24px; margin-left: -24px; }
-@media (max-width: 680px) {
-    .homeDetails { margin-top: 34px; }
-    .homeDetails summary { align-items: flex-start; padding: 18px; font-size: .95rem; }
-    .homeDetails summary span { display: block; margin-bottom: 4px; }
-    .homeDetails summary b { flex: 0 0 auto; }
-    .homeDetailsContent > .sectionShell { width: min(100% - 28px, 1180px); }
-    .homeDetailsContent > .darkSection { margin-right: -14px; margin-left: -14px; }
 }
