@@ -1352,9 +1352,10 @@ h3 {
     .marketingNav > a[href$="/signUp.html"] { grid-column: auto !important; width: 100% !important; justify-self: stretch !important; }
 }
 
-/* Navigation: keep every destination available without turning the header into a wall of buttons. */
+/* Navigation: one compact contract at every non-desktop width.
+   This deliberately overrides the older grid experiments above: a page must
+   never gain extra header rows simply because the visitor changes page. */
 .marketingNav a { white-space: nowrap; }
-
 
 /* The public homepage is an overview. The complete detail is available from its dedicated navigation pages. */
 .homeSupportingDetail { display: none; }
@@ -1382,43 +1383,38 @@ h3 {
     .marketingNav > a,
     .marketingNav > a[href$="/signIn.html"],
     .marketingNav > a[href$="/signUp.html"] {
+        display: inline-flex;
         flex: 0 0 auto;
+        align-items: center;
+        justify-content: center;
         width: auto !important;
         min-height: 38px;
         margin: 0;
         padding: 8px 12px;
+        font-size: .82rem;
+        line-height: 1.15;
+        text-align: center;
+        white-space: nowrap;
     }
-    .marketingNav > a.accountNavLink { order: -1; }
-    .marketingNav > a.accountNavLink:first-of-type { margin-left: 0; }
-    .marketingNav > a.accountNavLink:last-child { grid-column: auto; justify-self: auto; }
+    .marketingNav > a.accountNavLink {
+        order: 0;
+    }
 }
 
-/* Fixed mobile navigation: no horizontal sliding or uneven orphan buttons. */
-@media (max-width: 1100px) {
-    .marketingHeader { grid-template-columns: 1fr; justify-items: center; }
+@media (max-width: 480px) {
+    .marketingHeader {
+        gap: 8px;
+        padding: 11px 10px 9px;
+    }
     .marketingNav {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        width: min(100%, 520px);
-        max-width: 520px;
         gap: 5px;
-        overflow: visible;
-        padding: 0;
+        padding-bottom: 5px;
     }
     .marketingNav > a,
     .marketingNav > a[href$="/signIn.html"],
     .marketingNav > a[href$="/signUp.html"] {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100% !important;
-        min-height: 42px;
-        margin: 0;
-        padding: 7px 5px;
-        font-size: .76rem;
-        line-height: 1.15;
-        text-align: center;
-        white-space: normal;
+        min-height: 36px;
+        padding: 7px 10px;
+        font-size: .78rem;
     }
-    .marketingNav > a.accountNavLink { order: 0; }
 }
