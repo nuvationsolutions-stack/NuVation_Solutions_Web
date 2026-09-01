@@ -1352,9 +1352,7 @@ h3 {
     .marketingNav > a[href$="/signUp.html"] { grid-column: auto !important; width: 100% !important; justify-self: stretch !important; }
 }
 
-/* Navigation: one compact contract at every non-desktop width.
-   This deliberately overrides the older grid experiments above: a page must
-   never gain extra header rows simply because the visitor changes page. */
+/* Navigation: one compact contract at every non-desktop width. */
 .marketingNav a { white-space: nowrap; }
 
 /* The public homepage is an overview. The complete detail is available from its dedicated navigation pages. */
@@ -1370,15 +1368,12 @@ h3 {
     .headerCta { display: none; }
     .marketingNav {
         display: flex;
+        flex-wrap: wrap;
         align-items: center;
-        justify-content: flex-start;
-        width: 100%;
-        max-width: 760px;
-        gap: 7px;
-        overflow-x: auto;
-        overscroll-behavior-x: contain;
-        padding: 2px 2px 7px;
-        scrollbar-width: thin;
+        justify-content: center;
+        width: min(100%, 760px);
+        gap: 5px;
+        padding: 2px 0 5px;
     }
     .marketingNav > a,
     .marketingNav > a[href$="/signIn.html"],
@@ -1390,8 +1385,8 @@ h3 {
         width: auto !important;
         min-height: 38px;
         margin: 0;
-        padding: 8px 12px;
-        font-size: .82rem;
+        padding: 7px 9px;
+        font-size: .78rem;
         line-height: 1.15;
         text-align: center;
         white-space: nowrap;
@@ -1408,13 +1403,13 @@ h3 {
     }
     .marketingNav {
         gap: 5px;
-        padding-bottom: 5px;
+        padding-bottom: 4px;
     }
     .marketingNav > a,
     .marketingNav > a[href$="/signIn.html"],
     .marketingNav > a[href$="/signUp.html"] {
         min-height: 36px;
-        padding: 7px 10px;
-        font-size: .78rem;
+        padding: 6px 8px;
+        font-size: .74rem;
     }
 }
