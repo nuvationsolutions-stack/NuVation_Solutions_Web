@@ -310,6 +310,9 @@ h3 {
 .fourGrid {
     grid-template-columns: repeat(4, 1fr);
 }
+.threeGrid {
+    grid-template-columns: repeat(3, 1fr);
+}
 .featureCard, .priceCard {
     position: relative;
     padding: 24px;
@@ -321,6 +324,13 @@ h3 {
 .featureCard p, .priceCard p {
     margin: 11px 0 0;
     color: var(--muted);
+}
+.documentFeatureSection .featureCard {
+    border-top: 4px solid var(--gold);
+}
+.documentFeatureSection .cardIcon {
+    background: #fff8dc;
+    color: #604707;
 }
 .cardIcon {
     display: grid;
@@ -1070,7 +1080,7 @@ h3 {
         max-width: 680px;
         transform: none;
     }
-    .sixGrid, .pricingGrid {
+    .sixGrid, .threeGrid, .pricingGrid {
         grid-template-columns: repeat(2, 1fr);
     }
     .fourGrid {
@@ -1158,7 +1168,7 @@ h3 {
         padding-top: 64px;
         padding-bottom: 64px;
     }
-    .sixGrid, .fourGrid, .pricingGrid, .responsibilityGrid {
+    .sixGrid, .threeGrid, .fourGrid, .pricingGrid, .responsibilityGrid {
         grid-template-columns: 1fr;
     }
 
