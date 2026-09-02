@@ -1423,3 +1423,25 @@ h3 {
         font-size: .74rem;
     }
 }
+/* Focused public-site pages: extend the established visual language. */
+.compactHero { max-width: 980px; padding-top: 78px; padding-bottom: 48px; }
+.compactSection { padding-top: 68px; padding-bottom: 68px; }
+.heroPolished { min-height: 560px; }
+.compactWorkflow { padding-top: 68px; padding-bottom: 68px; }
+.compactSplit { padding-top: 62px; padding-bottom: 62px; }
+.productOptionGrid .featureCard, .serviceGrid .featureCard { min-height: 210px; border-top: 4px solid var(--gold); }
+.productOptionGrid .featureCard strong { display: block; margin-top: 18px; color: var(--navy); }
+.inlineCallout { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px; margin-top: 22px; padding: 17px 20px; border: 1px solid #d7c461; border-radius: var(--radius); background: #fffbed; color: #514a2b; }
+.inlineCallout strong { color: var(--navy); }
+.inlineCallout a { margin-left: auto; color: var(--teal); font-weight: 900; }
+.serviceHero { max-width: 920px; }
+.serviceGrid .featureCard { display: flex; flex-direction: column; }
+.serviceGrid .serviceIcon { margin-bottom: 16px; }
+@media (max-width: 480px) {
+  .compactHero { padding-top: 48px; padding-bottom: 34px; }
+  .compactSection { padding-top: 48px; padding-bottom: 48px; }
+  .heroPolished { min-height: auto; }
+  .productOptionGrid .featureCard, .serviceGrid .featureCard { min-height: 0; }
+  .inlineCallout { align-items: flex-start; flex-direction: column; }
+  .inlineCallout a { margin-left: 0; }
+}
