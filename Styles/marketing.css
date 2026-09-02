@@ -85,6 +85,11 @@ button, input, select, textarea {
 .accountNavLink {
     display: inline-flex;
 }
+.accountNavPair {
+    display: inline-flex;
+    align-items: center;
+    gap: 3px;
+}
 .launchNotice {
     display: flex;
     align-items: center;
@@ -1452,17 +1457,15 @@ h3 {
 }
 
 @media (max-width: 680px) {
-  /* Keep the two account actions as one compact pair without changing the menu. */
-  .marketingNav > a.accountNavLink {
-    flex: 0 0 auto !important;
-    padding-left: 10px;
-    padding-right: 10px;
+  /* The compact account pair gets its own centred row; all other links retain their flow. */
+  .marketingNav > .accountNavPair {
+    flex: 0 0 100%;
+    justify-content: center;
+    order: 1;
   }
-  .marketingNav > a.accountNavLink:nth-last-child(2) {
-    /* Start a new, centred account-action row without affecting other links. */
-    margin-left: calc(50% - 65px);
-  }
-  .marketingNav > a.accountNavLink + a.accountNavLink {
-    margin-left: -2px;
+  .marketingNav > .accountNavPair > a.accountNavLink {
+    min-height: 38px;
+    padding: 8px 10px;
+    font-size: .8rem;
   }
 }
