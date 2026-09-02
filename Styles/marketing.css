@@ -1450,3 +1450,10 @@ h3 {
     flex: 0 0 calc(50% - 3px) !important;
   }
 }
+
+@media (max-width: 680px) {
+  /* Keep Sign in and Sign up together on the final mobile row. */
+  .marketingNav > a.accountNavLink {
+    flex: 0 0 calc(50% - 3px) !important;
+  }
+}
