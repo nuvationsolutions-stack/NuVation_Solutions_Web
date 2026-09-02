@@ -565,6 +565,14 @@ h3 {
     margin: 8px 0 0;
     color: var(--muted);
 }
+.exploreCta {
+    align-items: stretch;
+    flex-direction: column;
+}
+.exploreCta .heroActions {
+    justify-content: center;
+    width: 100%;
+}
 .pageHero {
     padding-top: 100px;
     padding-bottom: 74px;
