@@ -210,6 +210,45 @@ h3 {
     padding-left: 18px;
     border-left: 1px solid var(--border);
 }
+.heroValuePanel {
+    max-width: 450px;
+    margin-top: 24px;
+    padding: 17px 18px 15px;
+    border: 1px solid #ded29a;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #fffdf4, #f6f1d9);
+    box-shadow: 0 10px 22px rgba(26, 23, 60, .07);
+}
+.heroValuePanel .priceLine {
+    margin-top: 0;
+}
+.heroValuePanel .priceLine strong {
+    color: var(--navy);
+    font-size: 1.55rem;
+    line-height: 1;
+}
+.heroValuePanel .priceLine span {
+    padding-left: 12px;
+    color: #655b33;
+}
+.heroValueMeta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 13px;
+}
+.heroValueMeta span {
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .72);
+    color: #544a28;
+    font-size: .8rem;
+    font-weight: 800;
+}
+.heroValuePanel .platformLine {
+    margin-top: 12px;
+    color: #655f59;
+}
 .appPreview {
     overflow: hidden;
     border: 1px solid #cbc8d5;
