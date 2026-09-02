@@ -1585,6 +1585,13 @@ h3 {
   .contactHelp { padding-top: 42px; padding-bottom: 42px; }
   .audienceDetail { padding-top: 40px; padding-bottom: 40px; }
 
+  /* A hero already has its own bottom space. Do not add a second full section
+     gap immediately after it; this keeps page starts as compact as Product. */
+  .pageHero + .contentSection,
+  .pageHero + .splitSection {
+    padding-top: 24px;
+  }
+
   /* The first Who it's for audience block follows its hero directly. Keep
      the transition compact instead of stacking both sections' top/bottom gap. */
   .pageHero + .audienceDetail { padding-top: 20px; }
