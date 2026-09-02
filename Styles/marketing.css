@@ -1572,7 +1572,10 @@ h3 {
 }
 
 @media (max-width: 480px) {
-  .pageHero { padding-top: 40px; padding-bottom: 30px; }
+  /* Match the Product hero: same left edge, same title scale and a slightly
+     higher starting point on a phone. */
+  .pageHero { padding-top: 32px; padding-bottom: 28px; }
+  .pageHero h1 { font-size: clamp(2.15rem, 11vw, 2.65rem); }
   .contentSection, .compactSection, .splitSection, .compactSplit { padding-top: 42px; padding-bottom: 42px; }
   .workflowLayout, .compactWorkflow { padding-top: 44px; padding-bottom: 44px; }
   .ctaSection { gap: 22px; padding-top: 40px; padding-bottom: 40px; }
