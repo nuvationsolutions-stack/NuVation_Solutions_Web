@@ -1558,3 +1558,31 @@ h3 {
     margin-top: 10px;
   }
 }
+
+/* Mobile pages share the same tighter vertical rhythm. Desktop keeps the
+   more spacious presentation; this only removes oversized phone gaps. */
+@media (max-width: 680px) {
+  .pageHero { padding-top: 52px; padding-bottom: 38px; }
+  .contentSection, .compactSection, .splitSection, .compactSplit { padding-top: 52px; padding-bottom: 52px; }
+  .workflowLayout, .compactWorkflow { padding-top: 54px; padding-bottom: 54px; }
+  .ctaSection { padding-top: 50px; padding-bottom: 50px; }
+  .contactLayout { padding-bottom: 56px; }
+  .contactHelp { padding-top: 52px; padding-bottom: 52px; }
+  .audienceDetail { padding-top: 48px; padding-bottom: 48px; }
+}
+
+@media (max-width: 480px) {
+  .pageHero { padding-top: 40px; padding-bottom: 30px; }
+  .contentSection, .compactSection, .splitSection, .compactSplit { padding-top: 42px; padding-bottom: 42px; }
+  .workflowLayout, .compactWorkflow { padding-top: 44px; padding-bottom: 44px; }
+  .ctaSection { gap: 22px; padding-top: 40px; padding-bottom: 40px; }
+  .sectionHeading { margin-bottom: 26px; }
+  .sectionHeading > p:last-child { margin-top: 10px; }
+  .contactLayout { padding-bottom: 44px; }
+  .contactHelp { padding-top: 42px; padding-bottom: 42px; }
+  .audienceDetail { padding-top: 40px; padding-bottom: 40px; }
+
+  /* The homepage explore block had a visibly empty lead-in and tail. */
+  .exploreCta { gap: 18px; padding-top: 30px; padding-bottom: 28px; }
+  .exploreCta .heroActions { gap: 10px; }
+}
