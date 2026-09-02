@@ -1585,6 +1585,10 @@ h3 {
   .contactHelp { padding-top: 42px; padding-bottom: 42px; }
   .audienceDetail { padding-top: 40px; padding-bottom: 40px; }
 
+  /* The first Who it's for audience block follows its hero directly. Keep
+     the transition compact instead of stacking both sections' top/bottom gap. */
+  .pageHero + .audienceDetail { padding-top: 20px; }
+
   /* The homepage explore block had a visibly empty lead-in and tail. */
   .exploreCta { gap: 18px; padding-top: 30px; padding-bottom: 28px; }
   .exploreCta .heroActions { gap: 10px; }
