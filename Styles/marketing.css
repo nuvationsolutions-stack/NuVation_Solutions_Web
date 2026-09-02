@@ -1520,4 +1520,41 @@ h3 {
     width: auto !important;
     justify-self: auto !important;
   }
+
+  /* Keep the base price and its period together instead of leaving the
+     period stranded on a tall second line. */
+  .heroValuePanel .priceLine {
+    align-items: baseline;
+    flex-direction: row;
+    gap: 0;
+  }
+  .heroValuePanel .priceLine span {
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #d7cfac;
+    font-size: .94rem;
+    line-height: 1.2;
+  }
+  .heroValuePanel {
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* The homepage hero stays breathable on a phone without the large gaps
+     that are useful only on wider screens. */
+  .hero {
+    gap: 22px;
+    padding-top: 32px;
+    padding-bottom: 34px;
+  }
+  .heroValuePanel {
+    padding: 16px;
+  }
+  .heroValueMeta {
+    margin-top: 10px;
+  }
+  .heroValuePanel .platformLine {
+    margin-top: 10px;
+  }
 }
