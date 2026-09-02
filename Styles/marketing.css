@@ -1444,4 +1444,9 @@ h3 {
   .productOptionGrid .featureCard, .serviceGrid .featureCard { min-height: 0; }
   .inlineCallout { align-items: flex-start; flex-direction: column; }
   .inlineCallout a { margin-left: 0; }
+
+  /* Keep the two account actions together on the final mobile row. */
+  .marketingNav > a.accountNavLink {
+    flex: 0 0 calc(50% - 3px) !important;
+  }
 }
