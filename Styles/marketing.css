@@ -1468,4 +1468,9 @@ h3 {
     padding: 8px 10px;
     font-size: .8rem;
   }
+  .marketingNav > .accountNavPair > a.accountNavLink:last-child {
+    grid-column: auto !important;
+    width: auto !important;
+    justify-self: auto !important;
+  }
 }
